@@ -1,5 +1,7 @@
 const usuariosValidos = [
     { usuario: "70798723", clave: "70798723" },
+    { usuario: "WALDIR", clave: "TEAMO" },
+    { usuario: "EDITH", clave: "73062107" }
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
