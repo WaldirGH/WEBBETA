@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <center>
+        <img src="../img/w.png" alt="logo">
+    </center>
+    <div>
+        <h1>Bienvenid@ estamos en ¡Beta, pero con actitud! 🚧</h1>
+        <p>
+            ¿Está todo terminado? No. ¿Funciona todo perfecto? Tampoco. ¿Nos importa? Un poquito, pero seguimos trabajando en ello.
+            Esta es la versión BETA de nuestra web, lo que básicamente significa que es como un adolescente confundido: ya camina, pero todavía se tropieza. 
+            Si encuentras un bug, ¡felicidades! Te ganaste el derecho de quejarte en voz alta (o mandarnos un correo, lo que sea más terapéutico).
+        </p>
+        <h2>💸 ¿La usas? ¡La pagas!</h2>
+        <p>
+            Sí, aunque estemos en beta. Porque aunque esté medio rota, todavía cuesta mantenerla viva. Y también porque el café no se paga solo.
+        </p>
+        <h3>😅 Promesa de Mejora™</h3>
+        <p>
+            Seguimos construyendo, corrigiendo y tirando líneas de código como locos. 
+            Así que si ves un botón que no hace nada… dale tiempo. O no. Tú sabrás.
+        </p>
+    <h1>CALCULAR TODO</h1>
+    <div><label>Croissant de Pollo:</label><input type="number" id="croissant_pollo"></div>
+    <div><label>Croissant Mixto:</label><input type="number" id="croissant_mixto"></div>
+    <div><label>Pita de Pollo:</label><input type="number" id="pita_pollo"></div>
+    <div><label>Ciabatta de Pollo:</label><input type="number" id="ciabatta_pollo"></div>
+    <div><label>Ciabatta Mixta:</label><input type="number" id="ciabatta_mixta"></div>
+    <div><label>Ciabatta Club:</label><input type="number" id="ciabatta_club"></div>
+
+    <center><button onclick="calcular()">CALCULAR</button></center>
+    <center style="margin-top: 20px;">
+    <button onclick="cerrarSesion()">CERRAR SESIÓN</button>
+    </center>
+    <div id="resultado" style="white-space: pre-wrap; margin-top: 20px;"></div>
+
+    <script src="../script/script.js"></script>
+</body>
+</html>

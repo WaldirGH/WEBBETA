@@ -1,0 +1,33 @@
+html {
+    background-color: black;
+}
+img {
+    margin: 20px auto;
+    display: block;
+    max-width: 50%;
+    height: auto;
+}
+p {
+    border: 2px solid red;
+    padding: 10px;
+    text-align: justify;
+    background-color: bisque;
+    color: black;
+    font-size: 24px;
+}
+
+button {
+    width: 100%;
+    background-color: red;
+    color: white;
+    margin: 15px 0px;
+    font-kerning: auto;
+    padding: 12px 24px;
+    font-size: 24px;
+    border-radius: 10px;
+}
+div {
+    color: aliceblue;
+    margin: 10px 0px;
+    font-size: 24px;
+}
