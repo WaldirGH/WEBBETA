@@ -100,11 +100,24 @@ function calcular() {
     const f = parseInt(document.getElementById("ciabatta_club").value) || 0;
 
     const resultado = new Listo(a, b, c, d, e, f);
-    document.getElementById("resultado").innerText = resultado.listar();
-}
+    document.getElementById("respuesta").innerText = resultado.listar();
+    document.getElementById("resultado").style.display = "flex"; 
+    }
+    function cerrarModal(event) {
+        if (event.target === document.getElementById('resultado')) {
+        document.getElementById('resultado').style.display = 'none';
+        }
+
+    }
+
+    function eventoModal(event) {
+        event.stopPropagation();
+    }
+
 
 function cerrarSesion() {
     localStorage.removeItem("logueado");
     localStorage.removeItem("usuario");
     window.location.href = "../index.html";
 }
+
