@@ -39,6 +39,10 @@ nav {
 main {
 	display: flex;
 }
+main>aside>p {
+	text-align: center;
+	color: red;
+}
 aside {
 	width: 40%;
 	padding: 20px;
