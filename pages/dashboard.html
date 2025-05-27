@@ -4,46 +4,85 @@
     <meta charset="UTF-8">
     <title>Dashboard</title>
     <link rel="stylesheet" href="../css/dashboard.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 </head>
 <body>
-    <center>
-        <img src="../img/w.png" alt="logo">
-    </center>
-    <div>
-        <h1>Bienvenid@ estamos en ¡Beta, pero con actitud! 🚧</h1>
-        <p>
-            ¿Está todo terminado? No. ¿Funciona todo perfecto? Tampoco. ¿Nos importa? Un poquito, pero seguimos trabajando en ello.
-            Esta es la versión BETA de nuestra web, lo que básicamente significa que es como un adolescente confundido: ya camina, pero todavía se tropieza. 
-            Si encuentras un bug, ¡felicidades! Te ganaste el derecho de quejarte en voz alta (o mandarnos un correo, lo que sea más terapéutico).
-        </p>
-        <h2>💸 ¿La usas? ¡La pagas!</h2>
-        <p>
-            Sí, aunque estemos en beta. Porque aunque esté medio rota, todavía cuesta mantenerla viva. Y también porque el café no se paga solo.
-        </p>
-        <h3>😅 Promesa de Mejora™</h3>
-        <p>
-            Seguimos construyendo, corrigiendo y tirando líneas de código como locos. 
-            Así que si ves un botón que no hace nada… dale tiempo. O no. Tú sabrás.
-        </p>
-    <h1>CALCULAR TODO</h1>
-    <div><label>Croissant de Pollo:</label><input type="number" id="croissant_pollo"></div>
-    <div><label>Croissant Mixto:</label><input type="number" id="croissant_mixto"></div>
-    <div><label>Pita de Pollo:</label><input type="number" id="pita_pollo"></div>
-    <div><label>Ciabatta de Pollo:</label><input type="number" id="ciabatta_pollo"></div>
-    <div><label>Ciabatta Mixta:</label><input type="number" id="ciabatta_mixta"></div>
-    <div><label>Ciabatta Club:</label><input type="number" id="ciabatta_club"></div>
-
-    <center><button onclick="calcular()">CALCULAR</button></center>
-    <center style="margin-top: 20px;">
-    <button onclick="cerrarSesion()">CERRAR SESIÓN</button>
-    </center>
-    
     <div id="resultado" class="modal-overlay" onclick="cerrarModal(event)" style="display: none;">
         <div class="modal" onclick="eventoModal(event)">
-            <pre id="respuesta"></pre>
+            <div id="respuesta"></div>
         </div>
     </div>
 
+    <div id="contenedor">
+        <header>
+            <img src="../img/trabajador.png" alt="">
+        </header>
+        <nav>
+            <h1>🥪 ¿LISTO PARA CALCULAR TU PREPARACIÓN?</h1>
+        </nav>
+        <p>
+            📝 Ingresa los productos que preparaste para ayudarte a llevar el control. 
+            Completa los datos de tu turno y recuerda registrar solo lo que ya preparaste hoy. 
+            ¡Gracias por tu compromiso!
+        </p>
+        <main>
+            <aside>
+                <form action="">
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text">Croissant de Pollo</span>
+                        <input type="number" id="croissant_pollo" class="form-control">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text">Croissant Mixto</span>
+                        <input type="number" id="croissant_mixto" class="form-control">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text">Pita de Pollo</span>
+                        <input type="number" id="pita_pollo" class="form-control">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text">Ciabatta de Pollo</span>
+                        <input type="number" id="ciabatta_pollo" class="form-control">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text">Ciabatta Mixta</span>
+                        <input type="number" id="ciabatta_mixta" class="form-control">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text">Ciabatta Club</span>
+                        <input type="number" id="ciabatta_club" class="form-control">
+                    </div>
+                </form>
+            </aside>
+            <section id="resultadoAside">
+                <h2>RESULTADO</h2>
+                <div>
+                    <pre id="contenidoResultado"></pre>
+                </div>
+            </section>
+        </main>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-primary" onclick="calcular()" type="button">CALCULAR</button>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-primary" onclick="calcular()" type="button">LIMPIAR</button>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-primary" onclick="calcular()" type="button">GUARDAR</button>
+        </div>
+        <footer>
+            <p>Desarrollado por <a href="#" target="_blank">GRUPO WAKA WAKA</a></p>
+            <div class="social-networks">
+                <ion-icon name="logo-instagram"></ion-icon>
+                <ion-icon name="logo-facebook"></ion-icon>
+                <ion-icon name="logo-twitter"></ion-icon>
+                <ion-icon name="logo-whatsapp"></ion-icon>
+                <img src="../img/only.png" alt="">
+            </div>
+        </footer>   
+    </div>
     <script src="../script/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

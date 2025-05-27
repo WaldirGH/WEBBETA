@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (usuarioValido) {
                 localStorage.setItem("logueado", "true");
                 localStorage.setItem("usuario", usuario);
+                localStorage.setItem("horaLogin", Date.now().toString());
                 window.location.href = "./pages/dashboard.html";
             } else {
                 mensajeError.textContent = "Usuario o clave incorrectos";
@@ -35,6 +36,16 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Debes iniciar sesión");
             window.location.href = "../index.html";
         } else {
+            const horaLogin = parseInt(localStorage.getItem("horaLogin"),10);
+            const ahora = Date.now();
+            const limite = 10 * 60 * 1000;
+            if (ahora - horaLogin > limite) {
+                alert("Tu sesión ha expirado. Por favor, inicia sesión nuevamente.");
+                localStorage.removeItem("logueado");
+                localStorage.removeItem("usuario");
+                localStorage.removeItem("horaLogin");
+                window.location.href = "../index.html";
+            }
             const usuario = localStorage.getItem("usuario");
             const saludo = document.createElement("h2");
             saludo.textContent = `¡Hola, ${usuario}!`;
@@ -86,14 +97,15 @@ class Listo {
 Pan Croissant: ${this.pan_Croissant()}
 Pan Ciabatta: ${this.pan_Ciabatta()}
 Pan Pita: ${this.pan_Pita()}
-Jamón: ${this.jamon()} g
-Queso: ${this.queso()} g
-Masa de Pollo: ${this.m_pollo()} g
-Lechuga: ${this.lechuga()} g`;
+Jamón: ${this.jamon()} gr
+Queso: ${this.queso()} gr
+Masa de Pollo: ${this.m_pollo()} gr
+Lechuga: ${this.lechuga()} gr`;
     }
 }
 
 function calcular() {
+
     const a = parseInt(document.getElementById("croissant_pollo").value) || 0;
     const b = parseInt(document.getElementById("croissant_mixto").value) || 0;
     const c = parseInt(document.getElementById("pita_pollo").value) || 0;
@@ -102,20 +114,9 @@ function calcular() {
     const f = parseInt(document.getElementById("ciabatta_club").value) || 0;
 
     const resultado = new Listo(a, b, c, d, e, f);
-    document.getElementById("respuesta").innerText = resultado.listar();
-    document.getElementById("resultado").style.display = "flex"; 
-    }
-    function cerrarModal(event) {
-        if (event.target === document.getElementById('resultado')) {
-        document.getElementById('resultado').style.display = 'none';
-        }
-
-    }
-
-    function eventoModal(event) {
-        event.stopPropagation();
-    }
-
+    const contenedorResultado = document.getElementById("contenidoResultado");
+    contenedorResultado.textContent = resultado.listar();
+}
 
 function cerrarSesion() {
     localStorage.removeItem("logueado");
