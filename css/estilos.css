@@ -3,9 +3,6 @@
 	border: 0;
     padding: 0;
 }
-body {
-	background-color: black;
-}
 
 div {
 	width: 95%;
@@ -37,19 +34,24 @@ nav {
 }
 
 main {
+	background-image: url(../img/listo.png);
+	background-size: cover;
+	background-position: center;
 	display: flex;
+	opacity: 2;
+	z-index: 1;
 }
-main>aside>p {
-	text-align: center;
-	color: red;
-}
+
 aside {
 	width: 40%;
 	padding: 20px;
     text-align: center;
     font-size: 18px;
-    background-color: #f2f2f2;
-    color: black;
+    /* background-color: #f2f2f2; */
+}
+section>form {
+	color: black;
+	font-weight: bold;
 }
 
 section {
@@ -59,10 +61,10 @@ section {
 	flex-direction: row;
 	justify-content: space-around;
 	flex-wrap: wrap;
-	background-color: white;
+	/* background-color: white; */
 	text-align: center;
-	border: 2px solid orangered;
 	font-family: Arial, Helvetica, sans-serif;
+
 }
 
 footer {
